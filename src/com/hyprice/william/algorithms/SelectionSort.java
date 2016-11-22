@@ -1,19 +1,11 @@
 package com.hyprice.william.algorithms;
 
-import java.util.Random;
-
 public class SelectionSort extends BaseSort {
 
 	public static void main(String[] args) {
-		final int MAX_SIZE = 10;
-		int[] array = new int[MAX_SIZE];
-		Random random = new Random();
-		for (int i = 0; i < MAX_SIZE; i++) {
-			array[i] = random.nextInt(MAX_SIZE * 10);
-		}
-
 		// 调用选择排序方法
 		SelectionSort selection = new SelectionSort();
+		int[] array = selection.genArray(10, 10);
 		System.out.print("排序前:\t");
 		selection.printAll(array);
 		selection.sort(array, array.length);

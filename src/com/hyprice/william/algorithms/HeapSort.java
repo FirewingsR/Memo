@@ -1,7 +1,5 @@
 package com.hyprice.william.algorithms;
 
-import java.util.Random;
-
 public class HeapSort extends BaseSort {
 
 	@Override
@@ -52,28 +50,10 @@ public class HeapSort extends BaseSort {
 		a[parent] = temp;
 	}
 
-	// 打印序列
-	public void printPart(int[] list, int begin, int end) {
-		for (int i = 0; i < begin; i++) {
-			System.out.print("\t");
-		}
-		for (int i = begin; i <= end; i++) {
-			System.out.print(list[i] + "\t");
-		}
-		System.out.println();
-	}
-
 	public static void main(String[] args) {
-		// 初始化一个序列
-		final int MAX_SIZE = 10;
-		int[] array = new int[MAX_SIZE];
-		Random random = new Random();
-		for (int i = 0; i < MAX_SIZE; i++) {
-			array[i] = random.nextInt(MAX_SIZE * 10);
-		}
-
 		// 调用快速排序方法
 		HeapSort heap = new HeapSort();
+		int[] array = heap.genArray(10, 10);
 		System.out.print("排序前:\t\t");
 		heap.printPart(array, 0, array.length - 1);
 		heap.sort(array, array.length);
