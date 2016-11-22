@@ -2,18 +2,6 @@ package com.hyprice.william.algorithms;
 
 public class SelectionSort extends BaseSort {
 
-	public static void main(String[] args) {
-		// 调用选择排序方法
-		SelectionSort selection = new SelectionSort();
-		int[] array = selection.genArray(10, 10);
-		System.out.print("排序前:\t");
-		selection.printAll(array);
-		selection.sort(array, array.length);
-		System.out.print("排序后:\t");
-		selection.printAll(array);
-
-	}
-
 	@Override
 	public void sort(int[] a, int len) {
 		// 需要遍历获得最小值的次数
@@ -32,6 +20,17 @@ public class SelectionSort extends BaseSort {
 			System.out.format("第 %d 趟:\t", i + 1);
 			printAll(a);
 		}
+	}
+	
+	public static void main(String[] args) {
+		// 调用选择排序方法
+		SelectionSort selection = new SelectionSort();
+		int[] array = selection.genArray(10, 10);
+		System.out.print("排序前:\t");
+		selection.printAll(array);
+		selection.sort(array, array.length);
+		System.out.print("排序后:\t");
+		selection.printAll(array);
 	}
 
 }
