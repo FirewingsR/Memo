@@ -54,11 +54,7 @@ public class HeapSort extends BaseSort {
 		// 调用快速排序方法
 		HeapSort heap = new HeapSort();
 		int[] array = heap.genArray(10, 10);
-		System.out.print("排序前:\t\t");
-		heap.printPart(array, 0, array.length - 1);
-		heap.sort(array, array.length);
-		System.out.print("排序后:\t\t");
-		heap.printPart(array, 0, array.length - 1);
+		heap.test(array);
 	}
 
 }

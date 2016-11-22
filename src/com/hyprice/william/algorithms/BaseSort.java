@@ -16,6 +16,15 @@ public abstract class BaseSort {
 		}
 		return array;
 	}
+	
+	// 测试
+	public void test(int[] array) {
+		System.out.print("排序前:\t\t");
+		printAll(array);
+		sort(array, array.length);
+		System.out.print("排序后:\t\t");
+		printAll(array);
+	}
 
 	// 交换
 	public void swap(int[] a, int x, int y) {
