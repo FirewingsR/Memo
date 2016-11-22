@@ -1,7 +1,7 @@
 package com.hyprice.william.algorithms;
 
 public abstract class BaseSort {
-	public abstract void sort(int[] a);
+	public abstract void sort(int[] a, int len);
 	// 交换
 	public void swap (int[] a, int x, int y) {
 		int temp = a[x];
