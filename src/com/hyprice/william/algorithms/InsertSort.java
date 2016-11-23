@@ -8,9 +8,9 @@ public class InsertSort extends BaseSort {
 		System.out.format("i = %d:\t\t", 0);
 		printPart(a, 0, 0);
 		// 第一个数是有序的，从第二个数正序遍历，依次插入有序序列
-		for (int i = 1; i < a.length; i++) {
+		for (int i = 1; i < len; i++) {
 			// 从第 i 个位置，倒序遍历，如果比之前元素小交换
-			for (int j = i; j > 0; j--) {
+			for (int j = i; j - 1 >= 0; j--) {
 				if (a[j] < a[j - 1]) {
 					swap(a, j, j - 1);
 				} else {
