@@ -17,7 +17,7 @@ public class HeapSort extends BaseSort {
 			// 筛选 R[0] 结点，得到i-1个结点的堆
 			HeapAdjust(a, 0, i);
 			
-			System.out.format("第 %d 趟: \t", len - i);
+			System.out.format("第 %d 趟：\t\t", len - i);
 			printPart(a, 0, len - 1);
 		}
 	}
@@ -51,7 +51,7 @@ public class HeapSort extends BaseSort {
 	}
 
 	public static void main(String[] args) {
-		// 调用快速排序方法
+		// 调用排序方法
 		HeapSort heap = new HeapSort();
 		int[] array = heap.genArray(10, 10);
 		heap.test(array);

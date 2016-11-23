@@ -17,13 +17,13 @@ public class SelectionSort extends BaseSort {
 			}
 			// 将找到的第i个小的数值放在第i个位置上
 			swap(a, index, i);
-			System.out.format("第 %d 趟:\t\t", i + 1);
+			System.out.format("第 %d 趟：\t\t", i + 1);
 			printAll(a);
 		}
 	}
 	
 	public static void main(String[] args) {
-		// 调用选择排序方法
+		// 调用排序方法
 		SelectionSort selection = new SelectionSort();
 		int[] array = selection.genArray(10, 10);
 		selection.test(array);
