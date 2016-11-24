@@ -32,10 +32,10 @@ public class ShellSort extends BaseSort {
 				}
 			}
 			
-			gap /= 2;
-			
 			System.out.format("gap = %d:\t", gap);
-            printAll(a);
+			printAll(a);
+            
+			gap /= 2;
 		}
 	}
 
