@@ -1,5 +1,8 @@
 package com.hyprice.william.algorithms;
 
+/*
+ * 已理解
+ */
 public class InsertSort extends BaseSort {
 
 	@Override
