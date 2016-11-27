@@ -1,56 +1,54 @@
 package com.hyprice.william.algorithms;
 
 public class HeapSort2 extends BaseSort {
-	
-	private static int[] sort = new int[] { 1, 0, 10, 20, 3, 5, 6, 4, 9, 8, 12, 17, 34, 11 };
 
 	@Override
 	public void sort(int[] a, int len) {
-		buildMaxHeapify(sort, len);
-		heapSort(sort);
-		print(sort);
+		buildMaxHeapify(a, len);
+		heapSort(a);
+		print(a);
 	}
-	
+
 	private static void buildMaxHeapify(int[] a, int len) {
 		// 没有子节点的才需要创建最大堆，从最后一个的父节点开始
-		int startIndex = getParentIndex(len - 1);
+		int startIndex = getParentIndex(a.length - 1);
 		// 从尾端开始创建最大堆，每次都是正确的堆
-		for (int i = startIndex; i >= 0; i++) {
-			maxHeapify(a, len, i);
+		for (int i = startIndex; i >= 0; i--) {
+			maxHeapify(a, a.length, i);
 		}
 	}
 
 	/**
 	 * 创建最大堆
-	 * 
-	 * @param data
-	 * @param heapSize需要创建最大堆的大小，一般在sort的时候用到，因为最多值放在末尾，末尾就不再归入最大堆了
-	 * @param index当前需要创建最大堆的位置
+	 *
+	 * @param a
+	 * @param heapSize:需要创建最大堆的大小，一般在sort的时候用到，因为最多值放在末尾，末尾就不再归入最大堆了
+	 * @param index:当前需要创建最大堆的位置
 	 */
-	private static void maxHeapify(int[] data, int heapSize, int index) {
+	private static void maxHeapify(int[] a, int heapSize, int index) {
 		// 当前点与左右子节点比较
 		int left = getChildLeftIndex(index);
 		int right = getChildRightIndex(index);
 
 		int largest = index;
-		if (left < heapSize && data[index] < data[left]) {
+		if (left < heapSize && a[index] < a[left]) {
 			largest = left;
 		}
-		if (right < heapSize && data[largest] < data[right]) {
+		if (right < heapSize && a[largest] < a[right]) {
 			largest = right;
 		}
 		// 得到最大值后可能需要交换，如果交换了，其子节点可能就不是最大堆了，需要重新调整
 		if (largest != index) {
-			int temp = data[index];
-			data[index] = data[largest];
-			data[largest] = temp;
-			maxHeapify(data, heapSize, largest);
+			int temp = a[index];
+			a[index] = a[largest];
+			a[largest] = temp;
+			maxHeapify(a, heapSize, largest);
 		}
 	}
 
 	/**
 	 * 排序，最大值放在末尾，data虽然是最大堆，在排序后就成了递增的
-	 * 
+	 *
 	 * @param data
 	 */
 	private static void heapSort(int[] data) {
@@ -65,7 +63,7 @@ public class HeapSort2 extends BaseSort {
 
 	/**
 	 * 父节点位置
-	 * 
+	 *
 	 * @param current
 	 * @return
 	 */
@@ -75,7 +73,7 @@ public class HeapSort2 extends BaseSort {
 
 	/**
 	 * 左子节点position注意括号，加法优先级更高
-	 * 
+	 *
 	 * @param current
 	 * @return
 	 */
@@ -85,7 +83,7 @@ public class HeapSort2 extends BaseSort {
 
 	/**
 	 * 右子节点position
-	 * 
+	 *
 	 * @param current
 	 * @return
 	 */
@@ -100,8 +98,9 @@ public class HeapSort2 extends BaseSort {
 				pre = (int) getLog(i + 1);
 				System.out.println();
 			}
-			System.out.print(data[i] + " |");
+			System.out.print(data[i] + "|");
 		}
+		System.out.println();
 	}
 
 	/**
